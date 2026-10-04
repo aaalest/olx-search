@@ -3,6 +3,7 @@ import json
 import re
 from playwright.async_api import async_playwright
 
+from init_app import initialize_directories
 
 async def get_olx_json_listings():
     async with async_playwright() as p:
@@ -78,4 +79,5 @@ async def get_olx_json_listings():
 
 
 if __name__ == "__main__":
+    initialize_directories()
     asyncio.run(get_olx_json_listings())
